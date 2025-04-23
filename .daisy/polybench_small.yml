@@ -135,7 +135,7 @@ steps:
   run:
     correlation:
       command: ./datamining/correlation/correlation.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -143,7 +143,7 @@ steps:
         - flops_dp
     covariance:
       command: ./datamining/covariance/covariance.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -151,7 +151,7 @@ steps:
         - flops_dp
     gemm:
       command: ./linear-algebra/blas/gemm/gemm.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -159,7 +159,7 @@ steps:
         - flops_dp
     gemver:
       command: ./linear-algebra/blas/gemver/gemver.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -167,7 +167,7 @@ steps:
         - flops_dp
     gesummv:
       command: ./linear-algebra/blas/gesummv/gesummv.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -175,7 +175,7 @@ steps:
         - flops_dp
     symm:
       command: ./linear-algebra/blas/symm/symm.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -183,7 +183,7 @@ steps:
         - flops_dp
     syr2k:
       command: ./linear-algebra/blas/syr2k/syr2k.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -191,7 +191,7 @@ steps:
         - flops_dp
     syrk:
       command: ./linear-algebra/blas/syrk/syrk.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -199,7 +199,7 @@ steps:
         - flops_dp
     trmm:
       command: ./linear-algebra/blas/trmm/trmm.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -207,7 +207,7 @@ steps:
         - flops_dp
     2mm:
       command: ./linear-algebra/kernels/2mm/2mm.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -215,7 +215,7 @@ steps:
         - flops_dp
     3mm:
       command: ./linear-algebra/kernels/3mm/3mm.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -223,7 +223,7 @@ steps:
         - flops_dp
     atax:
       command: ./linear-algebra/kernels/atax/atax.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -231,7 +231,7 @@ steps:
         - flops_dp
     bicg:
       command: ./linear-algebra/kernels/bicg/bicg.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -239,7 +239,7 @@ steps:
         - flops_dp
     doitgen:
       command: ./linear-algebra/kernels/doitgen/doitgen.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -247,7 +247,7 @@ steps:
         - flops_dp
     mvt:
       command: ./linear-algebra/kernels/mvt/mvt.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -255,7 +255,7 @@ steps:
         - flops_dp
     cholesky:
       command: ./linear-algebra/solvers/cholesky/cholesky.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -263,7 +263,7 @@ steps:
         - flops_dp
     durbin:
       command: ./linear-algebra/solvers/durbin/durbin.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -271,7 +271,7 @@ steps:
         - flops_dp
     gramschmidt:
       command: ./linear-algebra/solvers/gramschmidt/gramschmidt.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -279,7 +279,7 @@ steps:
         - flops_dp
     lu:
       command: ./linear-algebra/solvers/lu/lu.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -287,7 +287,7 @@ steps:
         - flops_dp
     ludcmp:
       command: ./linear-algebra/solvers/ludcmp/ludcmp.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -295,7 +295,7 @@ steps:
         - flops_dp
     trisolv:
       command: ./linear-algebra/solvers/trisolv/trisolv.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -303,7 +303,7 @@ steps:
         - flops_dp
     deriche:
       command: ./medley/deriche/deriche.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -311,7 +311,7 @@ steps:
         - flops_dp
     floyd-warshall:
       command: ./medley/floyd-warshall/floyd-warshall.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -319,7 +319,7 @@ steps:
         - flops_dp
     nussinov:
       command: ./medley/nussinov/nussinov.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -327,7 +327,7 @@ steps:
         - flops_dp
     adi:
       command: ./stencils/adi/adi.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -335,7 +335,7 @@ steps:
         - flops_dp
     fdtd-2d:
       command: ./stencils/fdtd-2d/fdtd-2d.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -343,7 +343,7 @@ steps:
         - flops_dp
     heat-3d:
       command: ./stencils/heat-3d/heat-3d.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -351,7 +351,7 @@ steps:
         - flops_dp
     jacobi-1d:
       command: ./stencils/jacobi-1d/jacobi-1d.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -359,7 +359,7 @@ steps:
         - flops_dp
     jacobi-2d:
       command: ./stencils/jacobi-2d/jacobi-2d.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
@@ -367,7 +367,7 @@ steps:
         - flops_dp
     seidel-2d:  
       command: ./stencils/seidel-2d/seidel-2d.out
-      measurements: 5
+      measurements: 2
       profiler: perf
       loops: true
       metrics:
