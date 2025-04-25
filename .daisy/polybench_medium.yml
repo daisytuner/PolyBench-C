@@ -8,6 +8,8 @@ on:
 parameters:
   timeout: 180
   partitions:
+    - chamomile
+    - zinnia
     - bellis5
 
 steps:
