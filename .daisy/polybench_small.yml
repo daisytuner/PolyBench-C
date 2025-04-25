@@ -10,6 +10,7 @@ parameters:
   partitions:
     - chamomile
     - zinnia
+    - bellis5
 
 steps:
   build: |
