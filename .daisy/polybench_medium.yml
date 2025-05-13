@@ -8,7 +8,7 @@ on:
 parameters:
   timeout: 60
   partitions:
-    - zinnia
+    - chamomile
 
 steps:
   build: |
@@ -24,6 +24,7 @@ steps:
     gemm:
       command: ./linear-algebra/blas/gemm/gemm.out
       measurements: 1
+      profiler: perf
       loops: true
       metrics:
         - runtime
@@ -31,6 +32,7 @@ steps:
     syr2k:
       command: ./linear-algebra/blas/syr2k/syr2k.out
       measurements: 1
+      profiler: perf
       loops: true
       metrics:
         - runtime
