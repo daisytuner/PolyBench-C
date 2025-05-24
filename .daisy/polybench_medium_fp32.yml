@@ -13,123 +13,123 @@ parameters:
 steps:
   build: |
     cd datamining/correlation
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c correlation.c -o correlation.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../utilities ../../utilities/polybench.c correlation.c -o correlation.out -lm -ldaisy_rtl
     cd ../../
 
     cd datamining/covariance
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c covariance.c -o covariance.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../utilities ../../utilities/polybench.c covariance.c -o covariance.out -lm -ldaisy_rtl
     cd ../../
 
     cd linear-algebra/blas/gemm
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gemm.c -o gemm.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c gemm.c -o gemm.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/gemver
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gemver.c -o gemver.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c gemver.c -o gemver.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/gesummv
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gesummv.c -o gesummv.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c gesummv.c -o gesummv.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/symm
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c symm.c -o symm.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c symm.c -o symm.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/syr2k
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c syr2k.c -o syr2k.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c syr2k.c -o syr2k.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/syrk
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c syrk.c -o syrk.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c syrk.c -o syrk.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/trmm
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c trmm.c -o trmm.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c trmm.c -o trmm.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/2mm
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c 2mm.c -o 2mm.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c 2mm.c -o 2mm.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/3mm
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c 3mm.c -o 3mm.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c 3mm.c -o 3mm.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/atax
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c atax.c -o atax.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c atax.c -o atax.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/bicg
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c bicg.c -o bicg.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c bicg.c -o bicg.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/doitgen
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c doitgen.c -o doitgen.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c doitgen.c -o doitgen.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/mvt
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c mvt.c -o mvt.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c mvt.c -o mvt.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/cholesky
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c cholesky.c -o cholesky.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c cholesky.c -o cholesky.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/durbin
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c durbin.c -o durbin.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c durbin.c -o durbin.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/gramschmidt
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gramschmidt.c -o gramschmidt.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c gramschmidt.c -o gramschmidt.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/lu
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c lu.c -o lu.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c lu.c -o lu.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/ludcmp
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c ludcmp.c -o ludcmp.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c ludcmp.c -o ludcmp.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/trisolv
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c trisolv.c -o trisolv.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../../utilities ../../../utilities/polybench.c trisolv.c -o trisolv.out -lm -ldaisy_rtl
     cd ../../../
 
     cd medley/deriche
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c deriche.c -o deriche.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../utilities ../../utilities/polybench.c deriche.c -o deriche.out -lm -ldaisy_rtl
     cd ../../
 
     cd medley/floyd-warshall
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_INT -I../../utilities ../../utilities/polybench.c floyd-warshall.c -o floyd-warshall.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_INT -I../../utilities ../../utilities/polybench.c floyd-warshall.c -o floyd-warshall.out -lm -ldaisy_rtl
     cd ../../
 
     cd medley/nussinov
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_INT -I../../utilities ../../utilities/polybench.c nussinov.c -o nussinov.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_INT -I../../utilities ../../utilities/polybench.c nussinov.c -o nussinov.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/adi
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c adi.c -o adi.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../utilities ../../utilities/polybench.c adi.c -o adi.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/fdtd-2d
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c fdtd-2d.c -o fdtd-2d.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../utilities ../../utilities/polybench.c fdtd-2d.c -o fdtd-2d.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/heat-3d
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c heat-3d.c -o heat-3d.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../utilities ../../utilities/polybench.c heat-3d.c -o heat-3d.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/jacobi-1d
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c jacobi-1d.c -o jacobi-1d.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../utilities ../../utilities/polybench.c jacobi-1d.c -o jacobi-1d.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/jacobi-2d
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c jacobi-2d.c -o jacobi-2d.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../utilities ../../utilities/polybench.c jacobi-2d.c -o jacobi-2d.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/seidel-2d
-    docc -mllvm -hotspot -g -O3 -DSMALL_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c seidel-2d.c -o seidel-2d.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_FLOAT -I../../utilities ../../utilities/polybench.c seidel-2d.c -o seidel-2d.out -lm -ldaisy_rtl
     cd ../../
 
   run:
