@@ -8,130 +8,128 @@ on:
 parameters:
   timeout: 180
   partitions:
-    - chamomile
     - zinnia
-    - bellis5
 
 steps:
   build: |
     cd datamining/correlation
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c correlation.c -o correlation.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c correlation.c -o correlation.out -lm -ldaisy_rtl
     cd ../../
 
     cd datamining/covariance
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c covariance.c -o covariance.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c covariance.c -o covariance.out -lm -ldaisy_rtl
     cd ../../
 
     cd linear-algebra/blas/gemm
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gemm.c -o gemm.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gemm.c -o gemm.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/gemver
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gemver.c -o gemver.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gemver.c -o gemver.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/gesummv
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gesummv.c -o gesummv.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gesummv.c -o gesummv.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/symm
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c symm.c -o symm.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c symm.c -o symm.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/syr2k
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c syr2k.c -o syr2k.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c syr2k.c -o syr2k.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/syrk
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c syrk.c -o syrk.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c syrk.c -o syrk.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/blas/trmm
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c trmm.c -o trmm.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c trmm.c -o trmm.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/2mm
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c 2mm.c -o 2mm.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c 2mm.c -o 2mm.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/3mm
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c 3mm.c -o 3mm.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c 3mm.c -o 3mm.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/atax
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c atax.c -o atax.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c atax.c -o atax.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/bicg
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c bicg.c -o bicg.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c bicg.c -o bicg.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/doitgen
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c doitgen.c -o doitgen.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c doitgen.c -o doitgen.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/kernels/mvt
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c mvt.c -o mvt.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c mvt.c -o mvt.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/cholesky
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c cholesky.c -o cholesky.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c cholesky.c -o cholesky.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/durbin
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c durbin.c -o durbin.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c durbin.c -o durbin.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/gramschmidt
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gramschmidt.c -o gramschmidt.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c gramschmidt.c -o gramschmidt.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/lu
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c lu.c -o lu.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c lu.c -o lu.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/ludcmp
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c ludcmp.c -o ludcmp.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c ludcmp.c -o ludcmp.out -lm -ldaisy_rtl
     cd ../../../
 
     cd linear-algebra/solvers/trisolv
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c trisolv.c -o trisolv.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../../utilities ../../../utilities/polybench.c trisolv.c -o trisolv.out -lm -ldaisy_rtl
     cd ../../../
 
     cd medley/deriche
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c deriche.c -o deriche.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c deriche.c -o deriche.out -lm -ldaisy_rtl
     cd ../../
 
     cd medley/floyd-warshall
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_INT -I../../utilities ../../utilities/polybench.c floyd-warshall.c -o floyd-warshall.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_INT -I../../utilities ../../utilities/polybench.c floyd-warshall.c -o floyd-warshall.out -lm -ldaisy_rtl
     cd ../../
 
     cd medley/nussinov
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_INT -I../../utilities ../../utilities/polybench.c nussinov.c -o nussinov.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_INT -I../../utilities ../../utilities/polybench.c nussinov.c -o nussinov.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/adi
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c adi.c -o adi.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c adi.c -o adi.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/fdtd-2d
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c fdtd-2d.c -o fdtd-2d.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c fdtd-2d.c -o fdtd-2d.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/heat-3d
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c heat-3d.c -o heat-3d.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c heat-3d.c -o heat-3d.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/jacobi-1d
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c jacobi-1d.c -o jacobi-1d.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c jacobi-1d.c -o jacobi-1d.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/jacobi-2d
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c jacobi-2d.c -o jacobi-2d.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c jacobi-2d.c -o jacobi-2d.out -lm -ldaisy_rtl
     cd ../../
 
     cd stencils/seidel-2d
-    docc -Xclang -no-opaque-pointers -mllvm -hotspot -g -O2 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c seidel-2d.c -o seidel-2d.out -lm -ldaisy_rtl
+    docc -mllvm -hotspot -g -O3 -DMEDIUM_DATASET -DDATA_TYPE_IS_DOUBLE -I../../utilities ../../utilities/polybench.c seidel-2d.c -o seidel-2d.out -lm -ldaisy_rtl
     cd ../../
 
   run:
@@ -140,238 +138,148 @@ steps:
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     covariance:
       command: ./datamining/covariance/covariance.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     gemm:
       command: ./linear-algebra/blas/gemm/gemm.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     gemver:
       command: ./linear-algebra/blas/gemver/gemver.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     gesummv:
       command: ./linear-algebra/blas/gesummv/gesummv.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     symm:
       command: ./linear-algebra/blas/symm/symm.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     syr2k:
       command: ./linear-algebra/blas/syr2k/syr2k.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     syrk:
       command: ./linear-algebra/blas/syrk/syrk.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     trmm:
       command: ./linear-algebra/blas/trmm/trmm.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     2mm:
       command: ./linear-algebra/kernels/2mm/2mm.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     3mm:
       command: ./linear-algebra/kernels/3mm/3mm.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     atax:
       command: ./linear-algebra/kernels/atax/atax.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     bicg:
       command: ./linear-algebra/kernels/bicg/bicg.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     doitgen:
       command: ./linear-algebra/kernels/doitgen/doitgen.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     mvt:
       command: ./linear-algebra/kernels/mvt/mvt.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     cholesky:
       command: ./linear-algebra/solvers/cholesky/cholesky.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     durbin:
       command: ./linear-algebra/solvers/durbin/durbin.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     gramschmidt:
       command: ./linear-algebra/solvers/gramschmidt/gramschmidt.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     lu:
       command: ./linear-algebra/solvers/lu/lu.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     ludcmp:
       command: ./linear-algebra/solvers/ludcmp/ludcmp.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     trisolv:
       command: ./linear-algebra/solvers/trisolv/trisolv.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     deriche:
       command: ./medley/deriche/deriche.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     floyd-warshall:
       command: ./medley/floyd-warshall/floyd-warshall.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     nussinov:
       command: ./medley/nussinov/nussinov.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     adi:
       command: ./stencils/adi/adi.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     fdtd-2d:
       command: ./stencils/fdtd-2d/fdtd-2d.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     heat-3d:
       command: ./stencils/heat-3d/heat-3d.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     jacobi-1d:
       command: ./stencils/jacobi-1d/jacobi-1d.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     jacobi-2d:
       command: ./stencils/jacobi-2d/jacobi-2d.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
     seidel-2d:  
       command: ./stencils/seidel-2d/seidel-2d.out
       measurements: 5
       profiler: perf
       loops: true
-      metrics:
-        - runtime
-        - flops_dp
